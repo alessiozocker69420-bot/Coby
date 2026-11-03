@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Box</title>
+
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #161b22;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 700px;
+            border: 1px solid #30363d;
+        }
+
+        h1 {
+            color: #00ffcc;
+            text-align: center;
+        }
+
+        pre {
+            background-color: #010409;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #00ffcc;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        button {
+            background-color: #00ffcc;
+            color: black;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #00ccaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Code Box</h1>
+
+        <pre><code id="code">addCoins = function(amount) {
+        return typeof log != 'undefined' && log !== null ? log.log({
+            event: "adjustCoins",
+            value: amount
+        }) : void 8;
+    };
+addCoins(42)</code></pre>
+
+        <button onclick="copyCode()">Code kopieren</button>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById("code").textContent;
+
+            navigator.clipboard.writeText(code);
+
+            alert("Code wurde kopiert!");
+        }
+    </script>
+
+</body>
+</html>
